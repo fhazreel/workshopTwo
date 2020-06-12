@@ -1,0 +1,128 @@
+<!DOCTYPE html>  
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <title>Admin Menu</title>
+
+ <!-- Bootstrap core CSS -->
+ <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Custom fonts for this template -->
+ <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+ <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+ <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+ <!-- Custom styles for this template -->
+ <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+ 
+</head>	
+	
+<body id="page-top">
+
+  <!-- Navigation -->
+	<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container">
+		<a class="navbar-brand" href="adminMenu.html">MagiClean</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+			</button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" id="logout" href="login.html">Logout</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Dashboard</h2>
+                    <h3 class="text-muted section-subheading">Nice to have you back</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="clearfix"></div>
+            </div>
+        </div>
+		  <div class="container" style="width:1000px;">  
+			    <!-- Design -->
+				  <section class="page-section" id="services">
+					<div class="container" style="margin-top: -7%;">
+
+					  <div class="row text-center" style="margin-right: -40%; margin-left: 2%;">
+						<div class="col-md-4">
+						  <span class="fa-stack fa-4x">
+							<image class="fas fa-shopping-cart fa-stack-1x fa-inverse" src="assets/img/icon/cleaner.png"></i>
+						  </span></br></br>
+						  <h4 class="service-heading">Vendor</h4>
+							<p class="text-muted">View list of Vendors Approval</p>
+							<a class="btn btn-lg btn-outline-warning btn-block text-dark "  href="vendorList.html" id="list_vendor"> Vendor Details</a>
+						</div>
+						<div class="col-md-4">
+						  <span class="fa-stack fa-4x">
+							<image class="fas fa-shopping-cart fa-stack-1x fa-inverse" src="assets/img/icon/clipboard.png"></i>
+						  </span></br></br>
+						  <h4 class="service-heading">Current Job</h4>
+							<p class="text-muted">View list of Current Job of Vendors</p>
+							<a class="btn btn-lg btn-outline-warning btn-block text-dark "  href="vendorJobList.html" id="list_job_vendor"> Vendor Jobs</a>
+						</div>
+					  </div>
+					</div>
+				  </section>
+			   <br />
+			   <br />
+
+</body>
+</html>
+
+<!-- Bootstrap core JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+<script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+ 
+
+<script type="text/javascript">
+console.log(localStorage.getItem("id"));
+
+session();
+function session(){
+      if (localStorage.getItem("id") === null) {
+      //...
+      alert("Please Sign In");
+      location.href = "login.html";
+
+    }
+}
+
+  document.getElementById("logout").addEventListener("click", myFunction);
+  function myFunction() {
+  
+  localStorage.removeItem("id");
+  localStorage.clear();
+  location.href = "login.html";
+  }
+
+
+</script>

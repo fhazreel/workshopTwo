@@ -1,0 +1,139 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>MagiClean</title>
+  
+    <!-- Bootstrap core CSS -->
+    <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Custom fonts for this template -->
+    <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  
+    <!-- Custom styles for this template -->
+    <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+ 
+</head>
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">MagiClean</a>
+     
+    </div>
+  </nav>
+
+   <!-- Portfolio Grid -->
+   <section class="bg-light page-section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">Register</h2>
+              <h3 class="section-subheading text-muted">Join us and you will satisfied with us</h3>
+            </div>
+          </div>
+          <div class="col-lg-12">
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                  <div class="row">
+                    <div class="col-md-12">
+                            <div class="alert alert-danger" id="alert-register" role="alert">
+                                    Error during <a href="#" class="alert-link">insert data</a>. You can try again.
+                                  </div>
+                            <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-user-tie"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" id="username" class="form-control" placeholder="Username">
+                                  </div>
+                      <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                          </div>
+                     
+                    </div>
+                   
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center" style="margin-top: 10%; margin-bottom: 16%;">
+                      <div id="success"></div>
+                      <input type="text" id="price" value="" hidden/>
+                      <input type="button" id="insert" class="btn btn-primary btn-xl text-uppercase" value="Register"/>
+                    </div>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </section>
+    
+  
+
+
+
+   <!-- Bootstrap core JavaScript -->
+   <script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+   <script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+   <!-- Plugin JavaScript -->
+   <script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+ 
+   <!-- Contact form JavaScript -->
+   <script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+   <script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+ 
+   <!-- Custom scripts for this template -->
+   <script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+ 
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function()
+ {
+    $( "#alert-register" ).hide();
+ $("#insert").click(function(){
+ alert('saya cute');
+
+ var username=$("#username").val();
+ var password=$("#password").val();
+
+ var dataString="username="+username+"&password="+password+"&price="+price+"&insert=";
+
+ $.ajax({
+ type: "POST",
+ url:"http://127.0.0.1:8080/Workshop2/myApp/www/php/insert.php",
+ data: dataString,
+ crossDomain: true,
+ cache: false,
+
+ success: function(data){
+ 
+ if(data=="success")
+ {
+    alert('Your data have been successfully added. Please login to login page');
+	window.location.assign('login.html');
+
+ $("#insert").val('done');
+ }
+ else if(data=="error")
+ {
+
+ $('#alert-register').show();
+ }
+ }
+ });
+
+ });
+ });
+ </script>
